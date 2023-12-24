@@ -1,0 +1,15 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+         int maxProfit = 0;
+
+        for (int i = 1; i < prices.length; i++) {
+            // Check if there's a possibility of making a profit by buying and selling on the same day
+            if (prices[i] > prices[i - 1]) {
+                // Add the difference to maxProfit
+                maxProfit += prices[i] - prices[i - 1];
+            }
+        }
+
+        return maxProfit;
+    }
+}
